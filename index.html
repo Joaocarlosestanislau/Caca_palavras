@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Caça-palavras</title>
+</head>
+<body>
+    <script>
+        M = new Array;
+        M = [
+            ["B","U","L","L","S","","","","","","","","","","","","","","",""],
+            ["","","A","","","","","","","","C","A","V","A","L","I","E","R","S",""],
+            ["","","K","","","","","","","","E","","","","","","","","",""],
+            ["","","E","","","","","","","","L","","","","","","","","",""],
+            ["","","R","","","","","","","","T","","","","","","","","",""],
+            ["","","S","","","","","","","","I","","","","","","","","",""],
+            ["","","","","","","","","","","C","","","","","","","G","",""],
+            ["","","","","","","","","","","S","","","","","","","R","",""],
+            ["","","","","","","","","","","","","","","","","","I","",""],
+            ["","","","","","","","","","","","","","","","","","Z","",""],
+            ["","","B","U","C","K","S","","","","","","","","","","","Z","",""],
+            ["","","L","","","","","","","","","","","","","","","L","",""],
+            ["","","A","","","","","","","","","","","","","","","I","",""],
+            ["","","Z","","","","","W","A","R","R","I","O","R","S","","","E","",""],
+            ["","","E","","","","","","","","","","","","","","","S","",""],
+            ["","","R","","","","","H","","","","","","","","","","","",""],
+            ["","","S","","","","","E","","","","","","","","","","","",""],
+            ["","","","","","","","A","","","","","R","A","P","T","O","R","S",""],
+            ["","","","","","","","T","","","","","","","","","","","",""],
+        ];
+
+        window.onload = function(){
+            for(let node of document.querySelectorAll("td")){
+                if(node.textContent != ""){
+                    node.className = "selecionada";
+                }
+                else{
+                    let charcode = Math.round(65 + Math.random() * 25)
+                    node.textContent = String.fromCharCode(charcode)
+                }
+            }
+        }
+
+        document.write("<h1><u>Ache os nomes de alguns times da NBA!!</u></h1><table border='0' align='center'>");
+
+
+        for (linha = 0; linha < 19; linha++){
+            document.write("<tr>")
+
+            for(coluna = 0; coluna < 20; coluna++){
+
+                document.write("<td>" + M[linha][coluna] + "</td>");
+
+            }
+
+            document.write("</tr>");
+
+        }
+        document.write("</table>")
+
+    </script>
+</body>
+</html>
